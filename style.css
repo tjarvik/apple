@@ -58,6 +58,8 @@ table {
 .container {
 	display: grid;
 	width: 100vw;
+	max-width: 1400px;
+	margin: 0 auto;
 	height: 800px;
 	grid-template: 1fr 200px 80px / 1fr 1fr 1fr 1fr;
 	grid-template-areas: 
@@ -65,40 +67,127 @@ table {
 		"p5s p5c bday supplier"
 		"footer footer footer footer";
 	grid-gap: 3px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero {
 	background-image: url(https://web.archive.org/web/20140228114747im_/http://images.apple.com/v/home/as/images/your_verse_hero.jpg);
-	background-repeat: none;
+	background-repeat: no-repeat;
+	background-position: center bottom;
 	grid-area: hero;
 	display: grid;
+	justify-items: center;
+	align-content: center;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-weight: 200;
+	color: white;
+}
+
+nav {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(9, 1fr);
+	background: linear-gradient(#666, #999);
+	width: 1000px;
+	height: 35px;
+	border-radius: 4px;
+}
+
+.nav {
+	display: grid;
+	font-size: 12px;
+	align-items: center;
+	justify-items: center;
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #666;
+	border-bottom: 2px solid rgba(0,0,0,0.4);
+}
+
+.nav:hover {
+	background: linear-gradient(#333, #666);
+}
+
+.nav2:hover {
+	background: linear-gradient(#666, #999);
+}
+
+.search {
+  margin: 0 10px;
+  background: rgba(255,255,255,0.2);
+  padding: 3px;
+  border-radius: 10px;
+  border-top: 2px solid rgba(0,0,0,0.4);
+}
+
+.search-input {
+	width: 80%;
+	height: 15px;
+	background: transparent;
+	border: none;
+}
+
+h1 {
+	font-size: 50px;
+	margin: 30px;
+}
+
+h2 {
+	font-size: 30px;
+	margin: 5px;
+}
+
+.watch {
+	font-size: 20px;
+	margin: 40px;
+}
+
+.watch:hover {
+	text-decoration: underline;
+}
+
+.product {
+	background-position: center top;
+	background-repeat: no-repeat;
 }
 
 .p5s {
 	background-image: url(images/promo_iphone5s.jpg);
-	background-repeat: none;
 	grid-area: p5s;
 }
 
 .p5c {
 	background-image: url(images/promo_iphone5c.jpg);
-	background-repeat: none;
 	grid-area: p5c;
 }
 
 .bday {
 	background-image: url(images/promo_30_years.jpg);
-	background-repeat: none;
 	grid-area: bday;
 }
 
 .supplier {
 	background-image: url(images/promo_supplier_responsibility.jpg);
-	background-repeat: none;
 	grid-area: supplier;
 }
 
 .footer {
+	padding-top: 20px;
 	grid-area: footer;
 	display: grid;
+	width: 1000px;
+	margin: 0 auto;
+	grid-template: 1fr 1fr / 1fr 1fr;
+	align-items: center;
+}
+
+.footer p {
+	font-size: 10px;
+	color: #666;
+}
+.footer a {
+	color: rgb(71, 147, 209);
+}
+
+.footer a:hover {
+	text-decoration: underline;
 }
